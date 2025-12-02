@@ -88,13 +88,17 @@ vim.keymap.set("n", "<leader>n", function()
 end, { desc = "Open Neo-tree full size" })
 
 -- --- GitSigns ---
+local gs = require("gitsigns")
 vim.keymap.set("n", "<leader>gb", function ()
-  require("gitsigns").blame_line({ full = true })
+  gs.blame_line({ full = true })
 end, {desc = "full line git blame"})
 
 vim.keymap.set("n", "<leader>gB", function ()
-  require("gitsigns").toggle_current_line_blame()
+  gs.toggle_current_line_blame()
 end, {desc = "toggle inline git blame"})
+
+vim.keymap.set("n", "<leader>rh", gs.reset_hunk, { desc = "Reset Git Hunk" })
+vim.keymap.set("n", "<leader>ph", gs.preview_hunk, { desc = "Preview Git Hunk" })
 
 -- --- Themery ---
 vim.keymap.set("n", "<leader>th", ":Themery", { desc = "Choose colorscheme" })
