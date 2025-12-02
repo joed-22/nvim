@@ -28,6 +28,7 @@ map('n', '<leader>fa', '<cmd>Telescope find_files follow=true no_ignore=true hid
 map('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', opts)
 map('n', '<leader>fz', '<cmd>Telescope current_buffer_fuzzy_find<cr>', opts)
 map('n', '<leader>fc', '<cmd>Telescope grep_string<cr>', opts)
+vim.keymap.set("n", "<leader>gt", function() require("telescope.builtin").git_status() end, { desc = "Git status diff"})
 
 -- --- LSP ---
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
@@ -85,6 +86,15 @@ vim.keymap.set("n", "<leader>n", function()
     },
   })
 end, { desc = "Open Neo-tree full size" })
+
+-- --- GitSigns ---
+vim.keymap.set("n", "<leader>gb", function ()
+  require("gitsigns").blame_line({ full = true })
+end, {desc = "full line git blame"})
+
+vim.keymap.set("n", "<leader>gB", function ()
+  require("gitsigns").toggle_current_line_blame()
+end, {desc = "toggle inline git blame"})
 
 -- --- Themery ---
 vim.keymap.set("n", "<leader>th", ":Themery", { desc = "Choose colorscheme" })
