@@ -103,6 +103,14 @@ end, {desc = "toggle inline git blame"})
 vim.keymap.set("n", "<leader>rh", gs.reset_hunk, { desc = "Reset Git Hunk" })
 vim.keymap.set("n", "<leader>ph", gs.preview_hunk, { desc = "Preview Git Hunk" })
 
+vim.keymap.set("n", "]c", function()
+  require("gitsigns").next_hunk()
+end, { desc = "Next git hunk" })
+
+vim.keymap.set("n", "[c", function()
+  require("gitsigns").prev_hunk()
+end, { desc = "Previous git hunk" })
+
 -- --- Themery ---
 vim.keymap.set("n", "<leader>th", ":Themery", { desc = "Choose colorscheme" })
 
