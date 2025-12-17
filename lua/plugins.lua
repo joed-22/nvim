@@ -61,6 +61,10 @@ vim.opt.lazyredraw = true
 -- From auto-session
 vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
 
+-- Enable per project scripts
+vim.o.exrc = true
+vim.o.secure = true
+
 require("lazy").setup({
 
   { import = "plugins.treesitter" },
