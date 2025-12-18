@@ -65,6 +65,8 @@ vim.o.sessionoptions = "blank,buffers,curdir,folds,help,tabpages,winsize,winpos,
 vim.o.exrc = true
 vim.o.secure = true
 
+vim.opt.undofile = true -- persistant undo
+
 require("lazy").setup({
 
   { import = "plugins.treesitter" },
