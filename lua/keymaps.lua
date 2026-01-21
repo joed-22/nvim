@@ -78,15 +78,12 @@ end, { desc = "Open Neo-tree normal" })
 
 vim.keymap.set("n", "<leader>n", function()
   require("neo-tree.command").execute({
+    source = "filesystem",
     toggle = true,
     position = "float",
-    float = {
-      relative = "editor",          -- relative to full editor
-      anchor = "NW",                -- top-left corner
-      width = math.floor(vim.o.columns * 0.9),
-      height = math.floor(vim.o.lines * 0.9),
-      border = "rounded",
-    },
+    reveal = true,
+    reveal_file = vim.fn.expand("%:p"),
+    reveal_force_cwd = true,
   })
 end, { desc = "Open Neo-tree full size" })
 
