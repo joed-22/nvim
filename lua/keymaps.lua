@@ -115,5 +115,16 @@ end, { desc = "Previous git hunk" })
 vim.keymap.set("n", "<leader>th", ":Themery", { desc = "Choose colorscheme" })
 
 -- --- Comment ---
-vim.keymap.set("n", "<leader>/", function() require("Comment.api").toggle.linewise.current() end, { desc = "Toggle comment line" })
--- vim.keymap.set("v", "<leader>/", function() require("Comment.api").toggle.blockwise.current() end, { desc = "Toggle comment block" })
+require("Comment").setup(opts)
+
+local api = require("Comment.api")
+local esc = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
+
+vim.keymap.set("n", "<leader>//", function()
+      api.toggle.linewise.current()
+    end, { desc = "Toggle comment (line)" })
+
+vim.keymap.set("x", "<leader>//", function()
+  vim.api.nvim_feedkeys(esc, "nx", false)
+  api.toggle.linewise(vim.fn.visualmode())
+end, { desc = "Toggle comment (visual)" })
