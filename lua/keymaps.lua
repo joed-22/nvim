@@ -9,6 +9,11 @@ map('n', '<leader>w', ':w<CR>', opts)  -- save
 map('n', "<C-s>", ':w<CR>', opts) -- save
 map('n', '<leader>w', ':w<CR>', opts)  -- save
 
+vim.keymap.set("n", "<leader>pp", function() --copy file path name
+  vim.fn.setreg("+", vim.fn.expand("%:."))
+  print(vim.fn.expand("%:."))
+end, { desc = "Copy file path (relative to cwd)" })
+
 -- --- window navigation ---
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to below window" })
