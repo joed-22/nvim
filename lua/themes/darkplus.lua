@@ -1,3 +1,4 @@
 return {
-  "martinsione/darkplus.nvim"
+  "martinsione/darkplus.nvim",
+  priority = 1000,
 }

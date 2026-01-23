@@ -114,7 +114,7 @@ vim.keymap.set("n", "[c", function()
 end, { desc = "Previous git hunk" })
 
 -- --- Themery ---
-vim.keymap.set("n", "<leader>th", ":Themery", { desc = "Choose colorscheme" })
+vim.keymap.set("n", "<leader>th", "<cmd>Themery<CR>", { desc = "Choose colorscheme" })
 
 -- --- Comment ---
 require("Comment").setup(opts)

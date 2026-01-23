@@ -86,14 +86,8 @@ require("lazy").setup({
   { import = "plugins.whichkey" },
 
 
-
-
-  { import = "themes.darkplus" },
-  { import = "themes.onedarkpro" },
-  { import = "themes.nightfox" },
-  { import = "themes.oxocarbon" },
-  { import = "themes.themery" },
-
+  { import = "themes" },
+  { import = "plugins.themery" }
 })
 
 -- Reload buffer lsps after auto-session for all tabs
