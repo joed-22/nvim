@@ -10,7 +10,7 @@ return {
         default = true, blue = true, darkblue = true, delek = true, desert = true, elflord = true, evening = true,
         habamax = false, industry = true, koehler = true, lunaperche = true, morning = true, murphy = true,
         pablo = true, peachpuff = true, quiet = true, retrobox = true, ron = true, shine = true, slate = true,
-        torte = true, vim = true, wildcharm = true, zaibatsu = true, zellner = true,
+        torte = true, unokai = true, vim = true, wildcharm = true, zaibatsu = true, zellner = true,
       }
       local out = {}
       for _, name in ipairs(all) do
