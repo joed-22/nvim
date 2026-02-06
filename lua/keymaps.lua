@@ -9,6 +9,8 @@ map('n', '<leader>w', ':w<CR>', opts)  -- save
 map('n', "<C-s>", ':w<CR>', opts) -- save
 map('n', '<leader>w', ':w<CR>', opts)  -- save
 
+map('n', '<ESC>', ':nohl<CR>', opts)  -- clear highlight
+
 vim.keymap.set("n", "<leader>pp", function() --copy file path name
   vim.fn.setreg("+", vim.fn.expand("%:."))
   print(vim.fn.expand("%:."))
