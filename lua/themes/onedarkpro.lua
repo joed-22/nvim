@@ -5,12 +5,12 @@ return {
     require("onedark").setup {
       style = "darker",
       colors = {
-        bg0 = "#201f23",
-        bg1 = "#201f23",
+        bg0 = "#1e1e1e",
+        bg1 = "#1e1e1e",
       },
       highlights = {
-        Normal = { bg = "#201f23" },
-        NormalFloat = { bg = "#201f23" },
+        Normal = { bg = "#1e1e1e" },
+        NormalFloat = { bg = "#1e1e1e" },
       },
     }
     require("onedark").load()
