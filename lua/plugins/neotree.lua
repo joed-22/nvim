@@ -21,6 +21,9 @@ return {
           relative = "editor",
         },
         close_if_last_window = true,
+        mappings = {
+          ["<space>"] = "open",  -- instead of toggle_or_open
+        },
       },
       filesystem = {
         follow_current_file = {
@@ -39,17 +42,19 @@ return {
         group_empty_dirs = false,
       },
       default_component_configs = {
-      indent = {
-        indent_size = 2,
-        padding = 1,
+        indent = {
+          indent_size = 2,
+          padding = 1,
+        },
+        icon = {
+          folder_closed = " ",
+          folder_open   = " ",
+          folder_empty  = "",
+          folder_empty_open = "",
+        },
       },
-      icon = {
-        folder_closed = " ",
-        folder_open   = " ",
-        folder_empty  = "",
-        folder_empty_open = "",
-      },
-    },
+      enable_diagnostics = false,
+      enable_git_status = false,
     }
   }
 }
