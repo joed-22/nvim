@@ -6,7 +6,6 @@ return {
       style = "darker",
       colors = {
         bg0 = "#1e1e1e",
-        bg1 = "#1e1e1e",
       },
       highlights = {
         Normal = { bg = "#1e1e1e" },
