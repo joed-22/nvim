@@ -1,3 +1,7 @@
+local function is_real_file()
+  return vim.bo.buftype == ""
+end
+
 local function has_multiple_real_buffers()
   local count = 0
   for _, win in ipairs(vim.api.nvim_tabpage_list_wins(0)) do
@@ -43,7 +47,7 @@ return {
             local path = vim.fn.expand("%:p:h")
             local file = vim.fn.expand("%:t")
             -- if no path or not a file nothing...
-            if path == "" or vim.bo.buftype ~= "" or not has_multiple_real_buffers() then
+            if path == "" or not is_real_file()  or not has_multiple_real_buffers() then
               return ""
             end
 
