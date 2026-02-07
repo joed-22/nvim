@@ -73,29 +73,30 @@ vim.keymap.set("n", "<leader>x", ":bdelete<CR>", { silent = true, desc = "Close 
 
 vim.keymap.set("n", "<leader>X", ":BufferLineCloseOthers<CR>", { silent = true, desc = "Close buffer" })
 vim.keymap.set("n", "<leader>b", ":BufferLinePick<CR>", { silent = true, desc = "Select buffer" })
+
 -- --- Neotree ---
 --vim.keymap.set("n", "<leader>n", ":Neotree toggle<CR>", { desc = "Toggle file tree" })
 -- vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", { desc = "Toggle file tree" })
 
-vim.keymap.set("n", "<C-n>", function()
-  require("neo-tree.command").execute({
-    toggle = true,
-    position = "left",
-    reveal = true,
-  })
-end, { desc = "Open Neo-tree normal" })
-
-vim.keymap.set("n", "<leader>n", function()
-  require("neo-tree.command").execute({
-    source = "filesystem",
-    toggle = true,
-    position = "float",
-    reveal = true,
-    reveal_file = vim.fn.expand("%:p"),
-    reveal_force_cwd = true,
-  })
-end, { desc = "Open Neo-tree full size" })
-
+-- vim.keymap.set("n", "<C-n>", function()
+--   require("neo-tree.command").execute({
+--     toggle = true,
+--     position = "left",
+--     reveal = true,
+--   })
+-- end, { desc = "Open Neo-tree normal" })
+--
+-- vim.keymap.set("n", "<leader>n", function()
+--   require("neo-tree.command").execute({
+--     source = "filesystem",
+--     toggle = true,
+--     position = "float",
+--     reveal = true,
+--     reveal_file = vim.fn.expand("%:p"),
+--     reveal_force_cwd = true,
+--   })
+-- end, { desc = "Open Neo-tree full size" })
+--
 -- --- GitSigns ---
 local gs = require("gitsigns")
 vim.keymap.set("n", "<leader>gb", function ()
