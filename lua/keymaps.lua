@@ -135,3 +135,6 @@ vim.keymap.set("x", "<leader>//", function()
   vim.api.nvim_feedkeys(esc, "nx", false)
   api.toggle.linewise(vim.fn.visualmode())
 end, { desc = "Toggle comment (visual)" })
+
+-- ---AutoSession ---
+vim.keymap.set("n", "<leader>as", ":AutoSession restore<CR>", { desc = "Restore AutoSession" })
