@@ -1,0 +1,13 @@
+return {
+  {
+      "rachartier/tiny-inline-diagnostic.nvim",
+      event = "VeryLazy",
+      priority = 1000,
+      opts = {
+        preset = "ghost",
+        signs = {
+          right = "",
+        },
+    },
+  },
+}

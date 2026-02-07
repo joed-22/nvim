@@ -84,7 +84,7 @@ require("lazy").setup({
   { import = "plugins.autosession" },
   { import = "plugins.gitsigns" },
   { import = "plugins.whichkey" },
-
+  { import = "plugins.tiny-inline-diag" },
 
   { import = "themes" },
   { import = "plugins.themery" }
