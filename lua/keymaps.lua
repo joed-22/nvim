@@ -54,15 +54,15 @@ local term = require("plugins.terminal")
 
 local toggle_float = "<A-i>"
 local toggle_horiz = "<A-h>"
-local toggle_vert = "<A-v>"
+-- local toggle_vert = "<A-v>"
 
 vim.keymap.set("n", toggle_float, function() term.float_term:toggle() end, { desc = "Floating terminal" })
 vim.keymap.set("n", toggle_horiz, function() term.horiz_term:toggle() end, { desc = "Horizontal terminal" })
-vim.keymap.set("n", toggle_vert, function() term.vert_term:toggle() end, { desc = "Vertical terminal" })
+-- vim.keymap.set("n", toggle_vert, function() term.vert_term:toggle() end, { desc = "Vertical terminal" })
 
 vim.keymap.set("t", toggle_float, function() term.float_term:toggle() end, { desc = "Floating terminal" })
 vim.keymap.set("t", toggle_horiz, function() term.horiz_term:toggle() end, { desc = "Horizontal terminal" })
-vim.keymap.set("t", toggle_vert, function() term.vert_term:toggle() end, { desc = "Vertical terminal" })
+-- vim.keymap.set("t", toggle_vert, function() term.vert_term:toggle() end, { desc = "Vertical terminal" })
 
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
