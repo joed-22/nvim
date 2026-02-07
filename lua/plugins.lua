@@ -41,9 +41,6 @@ vim.opt.splitright = true       -- vertical splits open to the right
 vim.opt.splitbelow = true       -- horizontal splits open below
 vim.opt.hidden = true           -- allow buffer switching without saving
 vim.opt.wrap = false             -- no line wrap
-vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
-vim.opt.foldlevel = 99          -- open all folds by default
 
 vim.opt.mouse = "a"             -- enable mouse in all modes
 vim.opt.showmode = false        -- lualine already shows mode
