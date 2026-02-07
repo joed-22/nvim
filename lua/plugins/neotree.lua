@@ -20,6 +20,7 @@ return {
           border = "rounded",
           relative = "editor",
         },
+        close_if_last_window = true,
       },
       filesystem = {
         follow_current_file = {
