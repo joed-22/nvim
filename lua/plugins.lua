@@ -82,6 +82,7 @@ require("lazy").setup({
   { import = "plugins.gitsigns" },
   { import = "plugins.whichkey" },
   { import = "plugins.tiny-inline-diag" },
+  { import = "plugins.incline" },
 
   { import = "themes" },
   { import = "plugins.themery" }
