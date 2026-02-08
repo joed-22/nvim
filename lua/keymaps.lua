@@ -36,8 +36,8 @@ map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
 map('n', '<leader>fa', '<cmd>Telescope find_files follow=true no_ignore=true hidden=true<cr>', opts)
 map('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', opts)
 map('n', '<leader>fz', '<cmd>Telescope current_buffer_fuzzy_find<cr>', opts)
-map('n', '<leader>fc', '<cmd>Telescope grep_string<cr>', opts)
-vim.keymap.set("n", "<leader>gt", function() require("telescope.builtin").git_status() end, { desc = "Git status diff"})
+map('n', '<leader>fc', '<cmd>Telescope grep_string initial_mode=normal<cr>', opts)
+map('n', '<leader>gt', '<cmd>Telescope git_status initial_mode=normal<cr>', opts)
 
 -- --- LSP ---
 vim.keymap.set("n", "gd", vim.lsp.buf.definition, { desc = "Go to definition" })
