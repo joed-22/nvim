@@ -64,6 +64,8 @@ vim.o.secure = true
 
 vim.opt.undofile = true -- persistant undo
 
+vim.o.winborder='rounded' -- border style
+
 require("lazy").setup({
 
   { import = "plugins.treesitter" },
@@ -89,7 +91,6 @@ require("lazy").setup({
   { import = "themes" },
   { import = "plugins.themery" }
 })
-
 -- Reload buffer lsps after auto-session for all tabs
 vim.api.nvim_create_autocmd("SessionLoadPost", {
     callback = function()
