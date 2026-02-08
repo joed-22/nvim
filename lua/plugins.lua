@@ -83,8 +83,8 @@ require("lazy").setup({
   { import = "plugins.whichkey" },
   { import = "plugins.tiny-inline-diag" },
   { import = "plugins.incline" },
-  -- { import = "plugins.oil" },
   { import = "plugins.yazi" },
+  { import = "plugins.bufdelete" },
 
   { import = "themes" },
   { import = "plugins.themery" }

@@ -3,7 +3,7 @@ return {
   lazy = false,
   opts = {
     suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
-    auto_restore = false,
+    auto_restore = true,
     -- session_lens = {
     --   picker = "telescope",
     --   mappings = {

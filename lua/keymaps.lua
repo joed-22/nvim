@@ -71,7 +71,7 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 -- --- Bufferline (tabs) ---
 vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true, desc = "Next buffer/tab" })
 vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true, desc = "Previous buffer/tab" })
-vim.keymap.set("n", "<leader>x", ":bdelete<CR>", { silent = true, desc = "Close buffer" })
+vim.keymap.set("n", "<leader>x", ":Bdelete<CR>", { silent = true, desc = "Close buffer" })
 
 vim.keymap.set("n", "<leader>X", ":BufferLineCloseOthers<CR>", { silent = true, desc = "Close buffer" })
 vim.keymap.set("n", "<leader>b", ":BufferLinePick<CR>", { silent = true, desc = "Select buffer" })
@@ -138,5 +138,5 @@ vim.keymap.set("x", "<leader>//", function()
   api.toggle.linewise(vim.fn.visualmode())
 end, { desc = "Toggle comment (visual)" })
 
--- ---AutoSession ---
+-- --- AutoSession ---
 vim.keymap.set("n", "<leader>as", ":AutoSession restore<CR>", { desc = "Restore AutoSession" })
