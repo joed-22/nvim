@@ -31,6 +31,11 @@ return {
         },
         mappings = { n = mark_multi_open_mapping, },
       },
+      pickers = {
+        find_files = {
+          hidden = true
+        },
+      },
     },
 }
 
