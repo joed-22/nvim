@@ -87,6 +87,7 @@ require("lazy").setup({
   { import = "plugins.incline" },
   { import = "plugins.yazi" },
   { import = "plugins.bufdelete" },
+  { import = "plugins.vim-tmux-navigator" },
 
   { import = "themes" },
   { import = "plugins.themery" }
