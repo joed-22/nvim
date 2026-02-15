@@ -41,22 +41,6 @@ return {
       local ft_icon, ft_color = devicons.get_icon_color(filename)
       local result = {}
 
-      -- ICON box + extra space
-      if ft_icon then
-        table.insert(result, {
-          " " .. ft_icon .. " ",
-          guibg = ft_color,
-          guifg = helpers.contrast_color(ft_color),
-        })
-        table.insert(result, " ") -- spacing between icon and filename
-      end
-
-      -- FILENAME
-      table.insert(result, {
-        filename,
-        gui = modified and "bold,italic" or "bold",
-      })
-
       local function sep() return { " | ", guifg = "#585b70" } end
 
       if props.focused then
@@ -129,15 +113,31 @@ return {
 
           for i, item in ipairs(entries) do
             table.insert(result, item)
-            if i < #entries then
-              table.insert(result, " ") -- trailing space for all but the last
+            if i <= #entries then
+              table.insert(result, " ")
             end
           end
         end
 
+        -- ICON box + extra space
+        if ft_icon then
+          table.insert(result, {
+            " " .. ft_icon .. " ",
+            guibg = ft_color,
+            guifg = helpers.contrast_color(ft_color),
+          })
+          table.insert(result, " ") -- spacing between icon and filename
+        end
+
+        -- FILENAME
+        table.insert(result, {
+          filename,
+          gui = modified and "bold,italic" or "bold",
+        })
+
         -- CLOCK
-        table.insert(result, sep())
-        table.insert(result, { os.date("%H:%M") })
+        --   table.insert(result, sep())
+        --   table.insert(result, { os.date("%H:%M") })
       end
 
       table.insert(result, " ")

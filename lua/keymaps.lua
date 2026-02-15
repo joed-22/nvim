@@ -31,7 +31,7 @@ vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { desc = "Move to right windo
 -- --- Telescope ---
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)
 map('n', '<leader>fw', '<cmd>Telescope live_grep<cr>', opts)
-map('n', '<leader>fb', '<cmd>Telescope buffers<cr>', opts)
+map('n', '<leader>fb', '<cmd>Telescope buffers <cr>', opts)
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
 map('n', '<leader>fa', '<cmd>Telescope find_files follow=true no_ignore=true hidden=true<cr>', opts)
 map('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', opts)

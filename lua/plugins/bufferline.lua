@@ -6,14 +6,22 @@ return {
     options = {
       mode = "buffers",
       always_show_bufferline = true,
-      show_buffer_close_icons = true,
+      show_buffer_close_icons = false,
       show_close_icon = false,
-      numbers = "ordinal",
+      numbers = "none",
       show_buffer_icons = false,
       color_icons = false,
       diagnostics = "false",
-      separator_style = "thin",
+      -- separator_style = "thin",
       sort_by = 'id',
+      show_tab_indicators = false,
+      tab_size = 1,
+
+      separator_style = { "", "" },
+
+      name_formatter = function(buf)
+        return vim.fn.fnamemodify(buf.name, ":t")
+      end,
 
       offsets = {
         {

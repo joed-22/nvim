@@ -44,7 +44,6 @@ vim.opt.wrap = false             -- no line wrap
 
 vim.opt.mouse = "a"             -- enable mouse in all modes
 vim.opt.showmode = false        -- lualine already shows mode
-vim.opt.showtabline = 2         -- always show tabs (bufferline takes over)
 
 vim.opt.foldmethod = "expr"
 vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
@@ -66,31 +65,33 @@ vim.opt.undofile = true -- persistant undo
 
 vim.o.winborder='rounded' -- border style
 
+vim.opt.showtabline = 0
+vim.opt.tabline = ""
+
 require("lazy").setup({
 
-  { import = "plugins.treesitter" },
-  { import = "plugins.mason" },
-  { import = "plugins.lsp" },
-  { import = "plugins.cmp" },
-  { import = "plugins.telescope" },
-  { import = "plugins.toggleterm" },
-  { import = "plugins.neotree" },
-  { import = "plugins.lualine" },
-  { import = "plugins.bufferline" },
-  { import = "plugins.autopairs" },
-  { import = "plugins.comment" },
-  { import = "plugins.indentblankline" },
-  { import = "plugins.autosession" },
-  { import = "plugins.gitsigns" },
-  { import = "plugins.whichkey" },
-  { import = "plugins.tiny-inline-diag" },
-  { import = "plugins.incline" },
-  { import = "plugins.yazi" },
-  { import = "plugins.bufdelete" },
-  { import = "plugins.vim-tmux-navigator" },
+   { import = "plugins.treesitter" },
+   { import = "plugins.mason" },
+   { import = "plugins.lsp" },
+   { import = "plugins.cmp" },
+   { import = "plugins.telescope" },
+   { import = "plugins.toggleterm" },
+   { import = "plugins.lualine" },
+   { import = "plugins.bufferline" },
+   { import = "plugins.autopairs" },
+   { import = "plugins.comment" },
+   { import = "plugins.indentblankline" },
+   { import = "plugins.autosession" },
+   { import = "plugins.gitsigns" },
+   { import = "plugins.whichkey" },
+   { import = "plugins.tiny-inline-diag" },
+   { import = "plugins.incline" },
+   { import = "plugins.yazi" },
+   { import = "plugins.bufdelete" },
+   { import = "plugins.vim-tmux-navigator" },
 
-  { import = "themes" },
-  { import = "plugins.themery" }
+   { import = "themes" },
+   { import = "plugins.themery" }
 })
 -- Reload buffer lsps after auto-session for all tabs
 vim.api.nvim_create_autocmd("SessionLoadPost", {
