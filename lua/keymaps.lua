@@ -140,3 +140,19 @@ end, { desc = "Toggle comment (visual)" })
 
 -- --- AutoSession ---
 vim.keymap.set("n", "<leader>as", ":AutoSession restore<CR>", { desc = "Restore AutoSession" })
+
+
+
+-- --- TmuxNavigator ---
+vim.keymap.set("n", "<c-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate Tmux Pane" })
+vim.keymap.set("n", "<c-left>", "<cmd>TmuxNavigateLeft<cr>", { desc = "Navigate Tmux Pane" })
+vim.keymap.set("n", "<c-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate Tmux Pane" })
+vim.keymap.set("n", "<c-down>", "<cmd>TmuxNavigateDown<cr>", { desc = "Navigate Tmux Pane" })
+vim.keymap.set("n", "<c-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate Tmux Pane" })
+vim.keymap.set("n", "<c-up>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate Tmux Pane" })
+vim.keymap.set("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate Tmux Pane" })
+vim.keymap.set("n", "<c-right>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate Tmux Pane" })
+
+
+
+
