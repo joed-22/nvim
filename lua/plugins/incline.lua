@@ -119,26 +119,27 @@ return {
           end
         end
 
-        -- ICON box + extra space
-        if ft_icon then
-          table.insert(result, {
-            " " .. ft_icon .. " ",
-            guibg = ft_color,
-            guifg = helpers.contrast_color(ft_color),
-          })
-          table.insert(result, " ") -- spacing between icon and filename
-        end
-
-        -- FILENAME
-        table.insert(result, {
-          filename,
-          gui = modified and "bold,italic" or "bold",
-        })
-
         -- CLOCK
         --   table.insert(result, sep())
         --   table.insert(result, { os.date("%H:%M") })
       end
+
+      -- ICON box + extra space
+
+      if ft_icon then
+        table.insert(result, {
+          " " .. ft_icon .. " ",
+          guibg = ft_color,
+          guifg = helpers.contrast_color(ft_color),
+        })
+        table.insert(result, " ") -- spacing between icon and filename
+      end
+
+      -- FILENAME
+      table.insert(result, {
+        filename,
+        gui = modified and "bold,italic" or "bold",
+      })
 
       table.insert(result, " ")
       return result

@@ -103,3 +103,7 @@ vim.api.nvim_create_autocmd("SessionLoadPost", {
         end
     end,
 })
+
+-- Override lualine's laststatus
+vim.opt.laststatus = 3
+vim.cmd([[set laststatus=3]])
