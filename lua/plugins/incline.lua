@@ -42,6 +42,7 @@ return {
       local result = {}
 
       local function sep() return { " | ", guifg = "#585b70" } end
+      local function first_sep() return { "| ", guifg = "#585b70" } end
 
       if props.focused then
         -- DIAGNOSTICS
@@ -67,7 +68,7 @@ return {
         end
 
         if #entries > 0 then
-          table.insert(result, sep())
+          table.insert(result, first_sep())
           for i, item in ipairs(entries) do
             table.insert(result, item)
             if i < #entries then
