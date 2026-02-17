@@ -68,6 +68,8 @@ vim.o.winborder='rounded' -- border style
 vim.opt.showtabline = 0
 vim.opt.tabline = ""
 
+vim.opt.cmdheight = 0
+
 require("lazy").setup({
 
    { import = "plugins.treesitter" },
