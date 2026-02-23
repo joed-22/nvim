@@ -65,10 +65,12 @@ vim.opt.undofile = true -- persistant undo
 
 vim.o.winborder='rounded' -- border style
 
-vim.opt.showtabline = 0
-vim.opt.tabline = ""
+vim.opt.showtabline = 2
 
 vim.opt.cmdheight = 0
+
+vim.opt.title = true
+vim.opt.titlestring = "%t"
 
 require("lazy").setup({
 
