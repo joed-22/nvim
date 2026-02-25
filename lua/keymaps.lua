@@ -16,7 +16,7 @@ vim.keymap.set("n", "<leader>pp", function() --copy file path name
   print(vim.fn.expand("%:."))
 end, { desc = "Copy file path (relative to cwd)" })
 
-map('n', 'vs', ':vnew<CR>', opts)  -- open a new vertical tab
+map('n', 'vs', ':vsplit<CR>', opts)  -- open a new vertical tab
 
 -- --- window navigation ---
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
