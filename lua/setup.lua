@@ -81,7 +81,6 @@ require("lazy").setup({
    { import = "plugins.telescope" },
    { import = "plugins.toggleterm" },
    { import = "plugins.lualine" },
-   { import = "plugins.bufferline" },
    { import = "plugins.autopairs" },
    { import = "plugins.comment" },
    { import = "plugins.indentblankline" },
@@ -90,7 +89,6 @@ require("lazy").setup({
    { import = "plugins.whichkey" },
    { import = "plugins.tiny-inline-diag" },
    { import = "plugins.incline" },
-   { import = "plugins.yazi" },
    { import = "plugins.bufdelete" },
    { import = "plugins.vim-tmux-navigator" },
 
