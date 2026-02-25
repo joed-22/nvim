@@ -48,6 +48,8 @@ vim.keymap.set("n", "gi", vim.lsp.buf.implementation, { desc = "Go to implementa
 vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 vim.keymap.set("v", "<leader>ca", vim.lsp.buf.code_action, { desc = "Code action" })
 
+vim.keymap.set('n', 'K', vim.lsp.buf.hover, { desc = "Hover Documentation" })
+
 -- --- Diagnostics via Tiny-inline-diagnostics ---
 vim.keymap.set("n", "<leader>dd", ":TinyInlineDiag toggle<CR>", { silent = true, desc = "Show diagnostics"})
 
