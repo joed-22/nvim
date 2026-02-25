@@ -114,7 +114,7 @@ return {
 
           for i, item in ipairs(entries) do
             table.insert(result, item)
-            if i <= #entries then
+            if i < #entries then
               table.insert(result, " ")
             end
           end
@@ -126,6 +126,7 @@ return {
       end
 
       -- ICON box + extra space
+      table.insert(result, " ") -- spacing between icon and filename
 
       if ft_icon then
         table.insert(result, {
