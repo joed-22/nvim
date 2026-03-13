@@ -31,7 +31,7 @@ vim.keymap.set("t", "<C-l>", [[<C-\><C-n><C-w>l]], { desc = "Move to right windo
 -- --- Telescope ---
 map('n', '<leader>ff', '<cmd>Telescope find_files<cr>', opts)
 map('n', '<leader>fw', '<cmd>Telescope live_grep<cr>', opts)
-map('n', '<leader>fb', '<cmd>Telescope buffers <cr>', opts)
+map('n', '<leader>fb', '<cmd>Telescope buffers initial_mode=normal<cr>', opts)
 map('n', '<leader>fh', '<cmd>Telescope help_tags<cr>', opts)
 map('n', '<leader>fa', '<cmd>Telescope find_files follow=true no_ignore=true hidden=true<cr>', opts)
 map('n', '<leader>fo', '<cmd>Telescope oldfiles<cr>', opts)
@@ -71,12 +71,12 @@ vim.keymap.set("t", toggle_horiz, function() term.horiz_term:toggle() end, { des
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
 -- --- Bufferline (tabs) ---
-vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true, desc = "Next buffer/tab" })
-vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true, desc = "Previous buffer/tab" })
-vim.keymap.set("n", "<leader>x", ":Bdelete<CR>", { silent = true, desc = "Close buffer" })
-
-vim.keymap.set("n", "<leader>X", ":BufferLineCloseOthers<CR>", { silent = true, desc = "Close buffer" })
-vim.keymap.set("n", "<leader>b", ":BufferLinePick<CR>", { silent = true, desc = "Select buffer" })
+-- vim.keymap.set("n", "<Tab>", ":BufferLineCycleNext<CR>", { silent = true, desc = "Next buffer/tab" })
+-- vim.keymap.set("n", "<S-Tab>", ":BufferLineCyclePrev<CR>", { silent = true, desc = "Previous buffer/tab" })
+-- vim.keymap.set("n", "<leader>x", ":Bdelete<CR>", { silent = true, desc = "Close buffer" })
+--
+-- vim.keymap.set("n", "<leader>X", ":BufferLineCloseOthers<CR>", { silent = true, desc = "Close buffer" })
+-- vim.keymap.set("n", "<leader>b", ":BufferLinePick<CR>", { silent = true, desc = "Select buffer" })
 
 -- --- Neotree ---
 --vim.keymap.set("n", "<leader>n", ":Neotree toggle<CR>", { desc = "Toggle file tree" })
@@ -155,6 +155,6 @@ vim.keymap.set("n", "<c-up>", "<cmd>TmuxNavigateUp<cr>", { desc = "Navigate Tmux
 vim.keymap.set("n", "<c-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate Tmux Pane" })
 vim.keymap.set("n", "<c-right>", "<cmd>TmuxNavigateRight<cr>", { desc = "Navigate Tmux Pane" })
 
-
-
+-- --- Buffers ---
+vim.keymap.set("n", "<leader>X", ":bufdo bd<cr>", { silent = true, desc = "Close all buffers" })
 

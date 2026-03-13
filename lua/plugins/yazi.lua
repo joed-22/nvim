@@ -39,7 +39,6 @@ return {
       show_help = "<f1>",
     },
     floating_window_scaling_factor = 1,
-    yazi_floating_window_winblend = 25,
 
     set_keymappings_function = function(bufnr, config, context)
       -- Map <Esc> in normal & terminal mode to exit yazi

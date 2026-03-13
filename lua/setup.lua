@@ -66,11 +66,9 @@ vim.opt.undofile = true -- persistant undo
 vim.o.winborder='rounded' -- border style
 
 vim.opt.showtabline = 2
+-- vim.opt.tabline="%t"
 
 vim.opt.cmdheight = 0
-
-vim.opt.title = true
-vim.opt.titlestring = "%t"
 
 require("lazy").setup({
 
@@ -89,6 +87,7 @@ require("lazy").setup({
    { import = "plugins.whichkey" },
    { import = "plugins.tiny-inline-diag" },
    { import = "plugins.incline" },
+   { import = "plugins.yazi" },
    { import = "plugins.bufdelete" },
    { import = "plugins.vim-tmux-navigator" },
    { import = "plugins.colorizer" },
