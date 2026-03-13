@@ -13,7 +13,7 @@ return {
       lualine_b = { "branch", "diff" },
       lualine_c = { {"filename", path = 0},},
       lualine_x = { "lsp_status", "fileformat", "filetype" },
-      lualine_y = { "progress", "filesize" },
+      lualine_y = { { 'searchcount', maxcount = 999999 }, "progress"},
       lualine_z = { "location" },
     },
 
