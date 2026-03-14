@@ -18,6 +18,8 @@ end, { desc = "Copy file path (relative to cwd)" })
 
 map('n', 'vs', ':vsplit<CR>', opts)  -- open a new vertical tab
 
+vim.keymap.set("n", "<leader>f/", "/<C-r><C-w><Cr>", { silent = false, desc = "Search word in file" })
+
 -- --- window navigation ---
 vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
 vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to below window" })
@@ -58,16 +60,11 @@ local term = require("plugins.terminal")
 
 local toggle_float = "<A-i>"
 local toggle_horiz = "<A-h>"
--- local toggle_vert = "<A-v>"
 
 vim.keymap.set("n", toggle_float, function() term.float_term:toggle() end, { desc = "Floating terminal" })
 vim.keymap.set("n", toggle_horiz, function() term.horiz_term:toggle() end, { desc = "Horizontal terminal" })
--- vim.keymap.set("n", toggle_vert, function() term.vert_term:toggle() end, { desc = "Vertical terminal" })
-
 vim.keymap.set("t", toggle_float, function() term.float_term:toggle() end, { desc = "Floating terminal" })
 vim.keymap.set("t", toggle_horiz, function() term.horiz_term:toggle() end, { desc = "Horizontal terminal" })
--- vim.keymap.set("t", toggle_vert, function() term.vert_term:toggle() end, { desc = "Vertical terminal" })
-
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
 -- --- Bufferline (tabs) ---
@@ -78,29 +75,6 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 -- vim.keymap.set("n", "<leader>X", ":BufferLineCloseOthers<CR>", { silent = true, desc = "Close buffer" })
 -- vim.keymap.set("n", "<leader>b", ":BufferLinePick<CR>", { silent = true, desc = "Select buffer" })
 
--- --- Neotree ---
---vim.keymap.set("n", "<leader>n", ":Neotree toggle<CR>", { desc = "Toggle file tree" })
--- vim.keymap.set("n", "<C-n>", ":Neotree toggle<CR>", { desc = "Toggle file tree" })
-
--- vim.keymap.set("n", "<C-n>", function()
---   require("neo-tree.command").execute({
---     toggle = true,
---     position = "left",
---     reveal = true,
---   })
--- end, { desc = "Open Neo-tree normal" })
---
--- vim.keymap.set("n", "<leader>n", function()
---   require("neo-tree.command").execute({
---     source = "filesystem",
---     toggle = true,
---     position = "float",
---     reveal = true,
---     reveal_file = vim.fn.expand("%:p"),
---     reveal_force_cwd = true,
---   })
--- end, { desc = "Open Neo-tree full size" })
---
 -- --- GitSigns ---
 local gs = require("gitsigns")
 vim.keymap.set("n", "<leader>gb", function ()
