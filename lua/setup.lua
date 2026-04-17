@@ -92,6 +92,8 @@ require("lazy").setup({
    { import = "plugins.vim-tmux-navigator" },
    { import = "plugins.colorizer" },
    { import = "plugins.yazi" },
+   { import = "plugins.markdown" },
+   { import = "plugins.render-markdown" },
 
    { import = "themes" },
    { import = "plugins.themery" }
