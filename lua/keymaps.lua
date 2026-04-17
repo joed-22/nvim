@@ -85,8 +85,10 @@ vim.keymap.set("n", "<leader>gB", function ()
   gs.toggle_current_line_blame()
 end, {desc = "toggle inline git blame"})
 
+vim.keymap.set('n', '<leader>sh', gs.stage_hunk, { desc = " Stage Git Hunk" })
 vim.keymap.set("n", "<leader>rh", gs.reset_hunk, { desc = "Reset Git Hunk" })
 vim.keymap.set("n", "<leader>ph", gs.preview_hunk, { desc = "Preview Git Hunk" })
+vim.keymap.set('n', '<leader>Ph', gs.preview_hunk_inline, { desc = "Preview Git Hunk Inline" })
 
 vim.keymap.set("n", "]c", function()
   require("gitsigns").next_hunk()
