@@ -70,6 +70,21 @@ vim.opt.showtabline = 2
 
 vim.opt.cmdheight = 0
 
+function leave_snippet()
+    if
+        ((vim.v.event.old_mode == 's' and vim.v.event.new_mode == 'n') or vim.v.event.old_mode == 'i')
+        and require('luasnip').session.current_nodes[vim.api.nvim_get_current_buf()]
+        and not require('luasnip').session.jump_active
+    then
+        require('luasnip').unlink_current()
+    end
+end
+
+-- stop snippets when you leave to normal mode
+vim.api.nvim_command([[
+    autocmd ModeChanged * lua leave_snippet()
+]])
+
 require("lazy").setup({
 
    { import = "plugins.treesitter" },
@@ -97,16 +112,6 @@ require("lazy").setup({
 
    { import = "themes" },
    { import = "plugins.themery" }
-})
--- Reload buffer lsps after auto-session for all tabs
-vim.api.nvim_create_autocmd("SessionLoadPost", {
-    callback = function()
-        for _, buf in ipairs(vim.api.nvim_list_bufs()) do
-            if vim.api.nvim_buf_is_loaded(buf) then
-                vim.lsp.buf_attach_client(buf, 0)
-            end
-        end
-    end,
 })
 
 -- Override lualine's laststatus
