@@ -4,6 +4,7 @@ return {
   opts = {
     suppressed_dirs = { "~/", "~/Projects", "~/Downloads", "/" },
     auto_restore = true,
+    purge_after_minutes = 4320, -- 3 days
     -- session_lens = {
     --   picker = "telescope",
     --   mappings = {
