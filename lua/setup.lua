@@ -109,6 +109,7 @@ require("lazy").setup({
    { import = "plugins.yazi" },
    { import = "plugins.markdown" },
    { import = "plugins.render-markdown" },
+   { import = "plugins.log-highlight" },
 
    { import = "themes" },
    { import = "plugins.themery" }
