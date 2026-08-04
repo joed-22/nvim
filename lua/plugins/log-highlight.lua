@@ -1,5 +1,11 @@
 return
 {
     'fei6409/log-highlight.nvim',
-    opts = {},
+    opts = {
+      pattern = {
+          '.*%.log%.[0-9]+',
+          '.*%.txt%.*',
+          'Downloads%/logs%/*'
+      },
+    },
 }
