@@ -64,7 +64,14 @@ local function build()
             { '-maxdepth', '3', '-name', 'index.json' })))
         or {}
     for _, json in ipairs(found) do
-        local ok, data = pcall(vim.json.decode, table.concat(vim.fn.readfile(json), '\n'))
+        -- `find -L` can hit filesystem loops (e.g. node package doc symlinks) and
+        -- emit an error line on stdout instead of a path; skip anything bogus.
+        local ok, data = false, nil
+        if vim.fn.filereadable(json) == 1 then
+            ok, data = pcall(function()
+                return vim.json.decode(table.concat(vim.fn.readfile(json), '\n'))
+            end)
+        end
         if ok and data.symbols then
             local dir = vim.fs.dirname(json)
             for _, s in ipairs(data.symbols) do

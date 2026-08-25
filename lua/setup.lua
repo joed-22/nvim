@@ -110,6 +110,7 @@ require("lazy").setup({
    { import = "plugins.markdown" },
    { import = "plugins.render-markdown" },
    { import = "plugins.log-highlight" },
+   { import = "plugins.oil" },
 
    { import = "themes" },
    { import = "plugins.themery" }
