@@ -61,7 +61,7 @@ local function build()
     roots = doc_roots()
     local found = #roots > 0
         and vim.fn.systemlist(vim.list_extend({ 'find', '-L' }, vim.list_extend(vim.deepcopy(roots),
-            { '-maxdepth', '3', '-name', 'index.json' })))
+            { '-maxdepth', '3', '(', '-name', 'index.json', '-o', '-name', 'index.json.gz', ')' })))
         or {}
     for _, json in ipairs(found) do
         -- `find -L` can hit filesystem loops (e.g. node package doc symlinks) and
@@ -69,7 +69,14 @@ local function build()
         local ok, data = false, nil
         if vim.fn.filereadable(json) == 1 then
             ok, data = pcall(function()
-                return vim.json.decode(table.concat(vim.fn.readfile(json), '\n'))
+                local content
+                if json:match('%.gz$') then
+                    content = table.concat(vim.fn.systemlist({ 'gzip', '-dc', json }), '\n')
+                    if vim.v.shell_error ~= 0 then error('gzip failed') end
+                else
+                    content = table.concat(vim.fn.readfile(json), '\n')
+                end
+                return vim.json.decode(content)
             end)
         end
         if ok and data.symbols then
