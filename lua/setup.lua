@@ -46,7 +46,7 @@ vim.opt.mouse = "a"             -- enable mouse in all modes
 vim.opt.showmode = false        -- lualine already shows mode
 
 vim.opt.foldmethod = "expr"
-vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldexpr = "v:lua.vim.treesitter.foldexpr()"
 vim.opt.foldlevel = 99
 
 vim.opt.fillchars = { eob = " " }
