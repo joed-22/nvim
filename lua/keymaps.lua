@@ -11,10 +11,10 @@ map('n', '<leader>w', ':w<CR>', opts)  -- save
 
 map('n', '<ESC>', ':nohl<CR>', opts)  -- clear highlight
 
-vim.keymap.set("n", "<leader>pp", function() --copy file path name
-  vim.fn.setreg("+", vim.fn.expand("%:."))
-  print(vim.fn.expand("%:."))
-end, { desc = "Copy file path (relative to cwd)" })
+vim.keymap.set("n", "<leader>pp", function() --copy file abs path name
+  vim.fn.setreg("+", vim.fn.expand("%:p"))
+  print(vim.fn.expand("%:p"))
+end, { desc = "Copy absolute file path" })
 
 map('n', 'vs', ':vsplit<CR>', opts)  -- open a new vertical tab
 
