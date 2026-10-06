@@ -95,7 +95,6 @@ require("lazy").setup({
    { import = "plugins.toggleterm" },
    { import = "plugins.lualine" },
    { import = "plugins.autopairs" },
-   { import = "plugins.comment" },
    { import = "plugins.indentblankline" },
    { import = "plugins.autosession" },
    { import = "plugins.gitsigns" },

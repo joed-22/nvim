@@ -103,19 +103,8 @@ end, { desc = "Previous git hunk" })
 vim.keymap.set("n", "<leader>th", "<cmd>Themery<CR>", { desc = "Choose colorscheme" })
 
 -- --- Comment ---
-require("Comment").setup(opts)
-
-local api = require("Comment.api")
-local esc = vim.api.nvim_replace_termcodes("<ESC>", true, false, true)
-
-vim.keymap.set("n", "<leader>//", function()
-      api.toggle.linewise.current()
-    end, { desc = "Toggle comment (line)" })
-
-vim.keymap.set("x", "<leader>//", function()
-  vim.api.nvim_feedkeys(esc, "nx", false)
-  api.toggle.linewise(vim.fn.visualmode())
-end, { desc = "Toggle comment (visual)" })
+vim.keymap.set("n", "<leader>//", "gcc", { remap = true, desc = "Toggle comment (line)" })
+vim.keymap.set("x", "<leader>//", "gc", { remap = true, desc = "Toggle comment (visual)" })
 
 -- --- AutoSession ---
 vim.keymap.set("n", "<leader>as", ":AutoSession restore<CR>", { desc = "Restore AutoSession" })
